@@ -8,7 +8,7 @@ function AboutUs() {
         <header className="text-center max-w-3xl mx-auto space-y-6">
           <h1 className="text-5xl font-bold tracking-tight">About Us</h1>
           <p className="text-xl text-gray-600 leading-relaxed">
-            Welcome to CarConnect – your premier platform for second-hand vehicle purchases and rentals, trusted by customers and industry experts alike.
+            Welcome to FairDeal – your premier platform for second-hand vehicle purchases and rentals, trusted by customers and industry experts alike.
           </p>
           <div className="pt-4">
             <Car className="w-16 h-16 mx-auto text-black opacity-80" />
@@ -20,7 +20,7 @@ function AboutUs() {
           <section className="space-y-6">
             <h2 className="text-3xl font-semibold">Who We Are</h2>
             <p className="text-gray-600 leading-relaxed">
-              At CarConnect, we specialize in providing a seamless, industry-standard experience for buying, selling, and renting pre-owned vehicles. As a leader in automotive e-commerce, our platform connects buyers and renters with high-quality, certified vehicles through cutting-edge technology, extensive listings, and customer-centric service.
+              At FairDeal, we specialize in providing a seamless, industry-standard experience for buying, selling, and renting pre-owned vehicles. As a leader in automotive e-commerce, our platform connects buyers and renters with high-quality, certified vehicles through cutting-edge technology, extensive listings, and customer-centric service.
             </p>
           </section>
 
@@ -86,9 +86,9 @@ function AboutUs() {
           </div>
         </section>
 
-        {/* Why Choose CarConnect */}
+        {}
         <section className="space-y-12 max-w-6xl mx-auto bg-gray-50 rounded-3xl p-12">
-          <h2 className="text-3xl font-semibold text-center">Why Choose CarConnect?</h2>
+          <h2 className="text-3xl font-semibold text-center">Why Choose FairDeal?</h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="group">
               <div className="flex items-start space-x-4">

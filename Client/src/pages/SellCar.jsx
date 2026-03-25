@@ -11,24 +11,13 @@ function SellCar() {
   const [uploadProgress, setUploadProgress] = useState(0);
 
   const storedUserId = localStorage.getItem('id');
-  // useEffect(() => {
-    
-
-  //   if (storedUserId) {
-  //     setFormData(prevFormData => ({
-  //       ...prevFormData,
-  //       user_id: storedUserId  // Keep it as a string
-  //     }));
-  //   } else {
-  //     setError('User ID not found. Please log in again.');
-  //   }
-  // }, []);
+ 
 
   const userId = localStorage.getItem('id');
 
   const [formData, setFormData] = useState({
     user_id: String(userId),
-    listing_status: 'requested',
+    listing_status: 'active',
     owner: '',
     RentSell: '',
     make: '',
@@ -115,49 +104,6 @@ function SellCar() {
       }));
     }
   };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-  //   setError('');
-
-  //   try {
-  //     const formDataToSend = new FormData();
-
-  //     Object.keys(formData).forEach(key => {
-  //       if (typeof formData[key] === 'object' && formData[key] !== null) {
-  //         formDataToSend.append(key, JSON.stringify(formData[key]));
-  //       } else {
-  //         formDataToSend.append(key, formData[key]);
-  //       }
-  //     });
-
-  //     selectedImages.forEach((image, index) => {
-  //       formDataToSend.append('images', image);
-  //     });
-
-  //     const response = await fetch('${API_BASE_URL}/api/listings/listings', {
-  //       method: 'POST',
-  //       body: formDataToSend,
-  //     });
-
-  //     if (!response.ok) {
-  //       throw new Error('Failed to create listing');
-  //     }
-
-  //     const data = await response.json();
-  //     console.log('Listing created:', data);
-
-  //     alert('Your car listing has been successfully created!');
-
-  //   } catch (err) {
-  //     setError(err.message || 'An error occurred while creating the listing');
-  //     console.error('Submission error:', err);
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -213,34 +159,6 @@ function SellCar() {
   const prevStep = () => setStep(step - 1);
 
   const validateStep = (currentStep) => {
-    // switch (currentStep) {
-    //   case 1:
-    //     if (!formData.owner || !formData.RentSell || !formData.make ||
-    //       !formData.model || !formData.year || !formData.mileage ||
-    //       !formData.price || !formData.location) {
-    //       setError('Please fill in all required fields');
-    //       return false;
-    //     }
-    //     break;
-    //   case 2:
-    //     if (!formData.engine || !formData.transmission || !formData.fuelType ||
-    //       !formData.seatingCapacity || !formData.exteriorColor ||
-    //       !formData.interiorColor || !formData.carType ||
-    //       !formData.condition) {
-    //       setError('Please fill in all required fields');
-    //       return false;
-    //     }
-    //     break;
-    //   case 4:
-    //     if (selectedImages.length === 0) {
-    //       setError('Please upload at least one image');
-    //       return false;
-    //     }
-    //     break;
-    //   default:
-    //     setError('');
-    //     return true;
-    // }
     setError('');
     return true;
   };

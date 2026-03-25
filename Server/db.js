@@ -1,8 +1,8 @@
 //db.js
 const mongoose = require('mongoose');
 
-// const uri = 'mongodb+srv://mohit10209:12345@cluster.iqj4l.mongodb.net/?retryWrites=true&w=majority&appName=Cluster';
-const uri = 'mongodb://localhost:27017/carRental';
+const uri = 'mongodb+srv://shubham:password2109@cluster0.bd9xlfu.mongodb.net/car-marketplace?appName=Cluster0';
+
 
 mongoose.connect(uri)
   .then(() => {

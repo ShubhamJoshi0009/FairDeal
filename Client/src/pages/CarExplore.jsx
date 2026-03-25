@@ -29,18 +29,17 @@ export default function CarExplore() {
         }
         const data = await response.json();
 
-        const filteredCars = data.filter(car =>
-          car.RentSell === (marketplaceMode === 'rent' ? 'Rent' : 'Sell') &&
-          car.listing_status === "active"
-        );
-
-        const transformedCars = filteredCars.map((car, index) => ({
+        const transformedCars = data.map((car, index) => ({
           id: car.listing_id || index,
           listing_id: car.listing_id,
           make: car.make || 'Unknown',
           model: car.model || 'Model',
           year: car.year || new Date().getFullYear(),
-          price: car.price?.$numberDecimal ? parseFloat(car.price.$numberDecimal) : 0,
+          price: car.price?.$numberDecimal
+  ? parseFloat(car.price.$numberDecimal)
+  : typeof car.price === "number"
+    ? car.price
+    : 0,
           mileage: car.mileage || 0,
           carType: car.carType || 'Unknown',
           image: car.images?.[0]?.url || '',
@@ -64,6 +63,7 @@ export default function CarExplore() {
   // Filter and sort cars
   const getFilteredAndSortedCars = () => {
     let filtered = cars.filter((car) => {
+      const matchesMode = car.rentSell?.toLowerCase() === (marketplaceMode === 'rent' ? 'rent' : 'sell');
       const isPriceInRange = car.price >= priceRange[0] && car.price <= priceRange[1];
       const isCarTypeMatch = carType ? car.carType.toLowerCase() === carType.toLowerCase() : true;
       const isMakeMatch = make ? car.make.toLowerCase() === make.toLowerCase() : true;
@@ -76,7 +76,7 @@ export default function CarExplore() {
           .includes(searchQuery.toLowerCase())
         : true;
 
-      return isPriceInRange && isCarTypeMatch && isMakeMatch &&
+      return matchesMode&&isPriceInRange && isCarTypeMatch && isMakeMatch &&
         isYearMatch && isTransmissionMatch && matchesSearch &&
         (marketplaceMode === 'buy' || isRatingMatch);
     });
@@ -193,7 +193,7 @@ export default function CarExplore() {
                     type="range"
                     id="price-range"
                     min="0"
-                    max="100000"
+                    max="10000000"
                     step="1000"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([0, parseInt(e.target.value)])}
@@ -201,7 +201,7 @@ export default function CarExplore() {
                   />
                   <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mt-1">
                     <span>₹0</span>
-                    <span>₹100,000+</span>
+                    <span>₹10,00,000+</span>
                   </div>
                 </div>
 

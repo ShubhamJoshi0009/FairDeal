@@ -99,7 +99,7 @@ function Footers() {
                         </div>
                     </div>
                     <div className="copy_right">
-                        <p>&copy; 2023 CarConnect. All rights reserved.</p>
+                        <p>&copy; 2026 FairDeal. All rights reserved.</p>
                         <div className="social">
                             <a href="https://facebook.com" aria-label="Facebook" className="quick_links">
                                 <Facebook className="icons" />

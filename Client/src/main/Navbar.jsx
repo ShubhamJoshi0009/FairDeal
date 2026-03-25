@@ -44,7 +44,7 @@ function Navbar() {
                                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center transition-transform duration-300 hover:scale-110">
                                     <span className="text-white font-bold text-xl"><img src={ccLogo} alt="CC logo" /></span>
                                 </div>
-                                <span className="font-bold text-xl text-gray-900 dark:text-white transition-colors duration-300">CarConnect</span>
+                                <span className="font-bold text-xl text-gray-900 dark:text-white transition-colors duration-300">FairDeal</span>
                             </Link>
                         </div>
                         <div className="flex items-center space-x-4">
@@ -86,7 +86,7 @@ function Navbar() {
                         <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                             <span className="text-white font-bold text-xl"><img src={ccLogo} alt="CC logo" /></span>
                         </div>
-                        <span className="font-bold text-xl text-gray-900 dark:text-white">CarConnect</span>
+                        <span className="font-bold text-xl text-gray-900 dark:text-white">FairDeal</span>
                     </Link>
                     <button
                         onClick={closeMenu}
