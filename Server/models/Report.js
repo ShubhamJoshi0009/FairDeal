@@ -64,29 +64,5 @@ const ReportSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Create a separate counter collection if it doesn't exist
-// const counterSchema = new mongoose.Schema({
-//     _id: { type: String, required: true },
-//     seq: { type: Number, default: 0 }
-// });
-// const Counter = mongoose.model('Counter', counterSchema);
-
-// Modified pre-save middleware for auto-incrementing report_id
-// ReportSchema.pre('save', async function(next) {
-//     try {
-//         if (!this.report_id) {
-//             const counter = await Counter.findByIdAndUpdate(
-//                 { _id: 'reportId' },
-//                 { $inc: { seq: 1 } },
-//                 { new: true, upsert: true }
-//             );
-//             this.report_id = counter.seq;
-//         }
-//         next();
-//     } catch (error) {
-//         next(error);
-//     }
-// });
-
 const Report = mongoose.model('Report', ReportSchema);
 module.exports = Report;

@@ -7,7 +7,7 @@ import { Car, Mail, User, MessageSquare } from "lucide-react";
 // import './media.css';
 
 const ContactUs = () => {
-  document.title = "Contact | Mohit";
+  document.title = "Contact Us";
 
   const [formData, setFormData] = useState({
     name: '',
